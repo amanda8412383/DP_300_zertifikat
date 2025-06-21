@@ -11,3 +11,22 @@
 
 --DMV dynamic management views
 --gather query performance info
+
+--sys.dm_exec_cached_plans 
+--Returns a row for each query plan that is cached by SQL Server for faster query execution. You can use 
+--this dynamic management view to find cached query plans, cached query text, the amount of memory 
+--taken by cached plans, and the reuse count of the cached plans. 
+--sys.dm_exec_sql_text 
+--Returns the text of the SQL batch that is identified by the specified sql_handle. 
+--sys.dm_exec_query_plan_stats 
+--Returns the equivalent of the last known actual execution plan for a previously cached query plan. 
+--cross apply like inner join
+select *
+from sys.dm_exec_cached_plans a 
+cross apply sys.dm_exec_sql_text(plan_handle) b
+cross apply sys.dm_exec_query_plan_stats (plan_handle) c
+
+
+
+
+
