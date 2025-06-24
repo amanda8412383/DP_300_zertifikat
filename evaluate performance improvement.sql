@@ -119,7 +119,54 @@ from sys.elastic_pool_resource_stats
 --sys.dm_tran_active_transactions 
 --Returns information about transactions for the instance of SQL Server.
 select *
-from sys.dm_tran_active_transactions 
+from sys.dm_tran_active_transactions ;
+
+--7.Indexes 
+--sys.dm_db_missing_index_details 
+--Returns detailed information about missing indexes, excluding spatial indexes.  
+--In Azure SQL Database, DMVs cannot expose information that would impact database containment or 
+--expose information about other databases the user has access to. 
+
+
+select *
+from sys.dm_db_missing_index_details ;
+--equality_columns : where column a = b
+--inequality_columns : where column a <> b
+
+--sys.dm_db_missing_index_group_stats 
+--Returns summary information about groups of missing indexes, excluding spatial indexes.
+
+select *
+from sys.dm_db_missing_index_group_stats 
+--avg_user_impact,percentage of average benefit if added index
+--avg_total_user_cost average cost that could be reduce by index
+
+--sys.dm_db_missing_index_groups 
+--This DMV returns information about indexes that are missing in a specific index group, except for spatial 
+--indexes. 
+select *
+from sys.dm_db_missing_index_groups 
+
+--sys.dm_db_missing_index_group_stats_query 
+--Returns information about queries that needed a missing index from groups of missing indexes, 
+--excluding spatial indexes. More than one query may be returned per missing index group. One missing 
+--index group may have several queries that needed the same index. 
+
+select *
+from sys.dm_db_missing_index_group_stats_query 
+
+--hint
+--specify join, union, group method for machine in option
+--should be avoided in general
+--multiple method can be given together in option seperated by comma
+--keepfixedplan: only recompile when underlying schema(e.g. column)/ changed. remain if stats changed
+--keepplan: compile less when statistic change (e.g. row cange)
+--optimize for unknown: use the average selection of where
+--option(optimize  for (@parameter unknown)) is often used in procedure 
+--robust plan: work for maximum potential row size
+
+
+
 
 
 
