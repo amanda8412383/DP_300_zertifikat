@@ -116,3 +116,14 @@
 --Microsoft have availability guarantee, if the availability is lower, then partial credit would be reimburse
 --SLA = server level agreement (coneectivity)
 --local replica is replicated within same storage building (shared power/network/cooling), zone replica will be at a seperate geo location, so if a natural disaster hit it might destroy all local replica, but zone replica should be safe, geo replica make sure it's in another geo selection (e.g. US west to US central)
+
+--deployment can be done through using json template
+--in the json file for sql db template under keyword resource, 2 type would need to be defined. one is server, the other is db
+--both server and db need apiversion, name and db
+--server has properties: administratorlogin, administratorpassword
+--db has sku: name and tier, dependsOn: resourceid(servername)
+--parameters(as variable in python) can be stored in a seperate file
+
+
+
+
