@@ -125,5 +125,10 @@
 --parameters(as variable in python) can be stored in a seperate file
 
 
-
-
+--bicep is a shorthand for json
+--bicep:       param    severname string = uniqueString('sql',  resourcegroup.id())
+--json-filed=  keyword  attribute type:sting default_value: uniqueString('sql',  resourcegroup.id())
+--bicep can't be directly deployed
+--azure pipeline, visual studio code bicep extention and github action can help with generate bicep format
+--then azure will convert bicep back to arm when compile
+--there is bicep playground online which does the translate between ARM and bicep, but the translation might not stay true to original version
