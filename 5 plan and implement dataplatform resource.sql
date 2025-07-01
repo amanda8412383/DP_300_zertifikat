@@ -132,3 +132,6 @@
 --azure pipeline, visual studio code bicep extention and github action can help with generate bicep format
 --then azure will convert bicep back to arm when compile
 --there is bicep playground online which does the translate between ARM and bicep, but the translation might not stay true to original version
+--deployment could also be done through powershell/azure cli
+--Der SQL Server Agent ist ein Feature von SQL Server selbst und wird für die Verwaltung und Ausführung von Aufträgen auf einer einzelnen SQL Server-Instanz oder in einem Multi-Server-Setup verwendet. 
+--Der Elastic Job Agent hingegen ist eine Azure-Ressource, die speziell für die Verwaltung und Ausführung von Aufträgen über mehrere Datenbanken in Azure SQL Datenbank, auch über verschiedene Server und Regionen hinweg, entwickelt wurde. 
